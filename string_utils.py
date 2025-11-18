@@ -1,3 +1,4 @@
+
 def split_before_each_uppercases(formula):
     if not formula:
         return []
@@ -20,11 +21,12 @@ def split_at_first_digit(formula):
 
     for i, ch in enumerate(formula):
         if ch.isdigit():
-            k = i
-            while k < len(formula) and formula[k].isdigit():
-                k += 1
+            j = i
+            while j < len(formula) and formula[j].isdigit():
+                j += 1
             prefix = formula[:i]
-            number_part = int(formula[i:k])
+            number_part = int(formula[i:j])
             return prefix, number_part
 
     return formula, 1
+    
